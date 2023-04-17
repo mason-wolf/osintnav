@@ -1,0 +1,31 @@
+<h1>{{ country_name}}</h1>
+<a [routerLink]="['']">dashboard</a>
+<div class="container">
+  Forces
+  <button class="action" (click)="showForceForm()">Add Force</button>
+  <div *ngIf="add_force">
+    <input placeholder="Force Name" [(ngModel)]="force.force_name"><br>
+    <input placeholder="Force Type" [(ngModel)]="force.type"><br>
+    <input placeholder="Location" [(ngModel)]="force.location"><br>
+    <input placeholder="Notes" [(ngModel)]="force.notes"><br><br>
+    <button (click)="addForce()">Add</button>
+  </div>
+  <div class="record" *ngFor="let force of country.forces">
+    {{ force.force_name }} <a href="javascript:void(0)" style="float:right;" (click)="removeForce(force.force_name)">remove</a>
+  </div>
+</div>
+<div class="container">
+  Weapons
+</div>
+<div class="container">
+  Aircraft
+</div>
+<div class="container">
+  Vehicles
+</div>
+<div class="container">
+  Equipment
+</div>
+
+
+

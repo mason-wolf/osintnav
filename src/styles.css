@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(36, 36, 36);
+  color: #fff;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  letter-spacing: 2px;
+}
+
+
+input {
+  font-family: 'Saira Semi Condensed', sans-serif;
+  letter-spacing: 2px;
+  outline: none;
+  font-size: 18px;
+  color: #00ff00;
+  border: 1px solid rgb(75, 75, 75);
+  background-color: rgb(75, 75, 75);
+  margin-top:10px;
+  width: 100%;
+}
+
+button {
+  font-size: 18px;
+  background-color: rgb(0, 78, 0);
+  font-family: 'Saira Semi Condensed', sans-serif;
+  letter-spacing: 2px;
+  border: 1px solid rgb(0, 78, 0);
+  color: #fff;
+}
+
+.container {
+  border: 1px solid #009e00;
+  padding: 1em;
+  margin-top:10px;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.record {
+  margin-top: 15px;
+  background-color: rgb(71, 71, 71);
+  padding: .5em;
+}
