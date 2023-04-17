@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FileService } from '../file.service';
 import { Force } from '../models/force/force.model';
 
+
 @Component({
   selector: 'app-view-country',
   templateUrl: './view-country.component.html',
@@ -10,6 +11,8 @@ import { Force } from '../models/force/force.model';
 })
 export class ViewCountryComponent implements OnInit {
 
+  displayedColumns: string[] = ['force_name', 'type', 'location' , 'notes'];
+  dataSource: any;
   country_name: string;
   force: Force = new Force();
   add_force = false;
@@ -24,7 +27,8 @@ export class ViewCountryComponent implements OnInit {
     });
 
     this.country = this.fileService.getCountry(this.country_name);
-    console.log(this.country);
+    this.dataSource = this.country.forces;
+    console.log(this.country.forces)
   }
 
   addForce() {

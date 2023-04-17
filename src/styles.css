@@ -43,3 +43,17 @@ a {
   background-color: rgb(71, 71, 71);
   padding: .5em;
 }
+
+.mat-tab-label {
+  font-family: 'Saira Semi Condensed', sans-serif;
+  color: white;
+}
+
+.mat-ink-bar {
+  background-color: #009e00 !important;
+}
+
+table {
+  width: 100%;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
