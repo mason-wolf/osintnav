@@ -1,7 +1,7 @@
 <h1>{{ country_name}}</h1>
 <a [routerLink]="['']">dashboard</a>
 <div class="container">
-  Forces
+  Forces {{ country.forces.length }} Total
   <button class="action" (click)="showForceForm()">Add Force</button>
   <div *ngIf="add_force">
     <input placeholder="Force Name" [(ngModel)]="force.force_name"><br>
