@@ -9,12 +9,14 @@ import { ViewCountryComponent } from './view-country/view-country.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import { ForcesComponent } from './forces/forces.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ViewCountryComponent
+    ViewCountryComponent,
+    ForcesComponent
   ],
   imports: [
     BrowserModule,

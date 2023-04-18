@@ -29,7 +29,16 @@ export class DashboardComponent implements OnInit {
     a.click();
     a.remove();
   }
-  
+
+
+  async importData(event) {
+
+    const file:File = event.target.files[0];
+    const text = await file.text()
+    console.log(text);
+  }
+
+
   loadDb() {
     this.db = this.fileService.getDb();
     this.countries = [];

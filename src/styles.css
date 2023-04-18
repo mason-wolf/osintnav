@@ -29,7 +29,6 @@ button {
 
 .container {
   border: 1px solid #009e00;
-  padding: 1em;
   margin-top:10px;
 }
 
@@ -56,4 +55,8 @@ a {
 table {
   width: 100%;
   font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.mat-table {
+  background-color: rgb(46, 46, 46);
 }
