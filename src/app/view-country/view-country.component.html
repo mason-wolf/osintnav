@@ -1,5 +1,8 @@
-<h1>{{ country_name}}</h1>
-<a [routerLink]="['']">dashboard</a>
+<h1>OSINTNAV</h1>
+<div style="margin-top:-28px;">
+  Open Source Intelligence - {{ country_name | titlecase}}
+</div>
+<a [routerLink]="['']">Dashboard</a>
 <div class="container">
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Forces">
@@ -9,21 +12,6 @@
   </mat-tab>
   </mat-tab-group>
 </div>
-<!-- <div class="container">
-  Forces {{ country.forces.length }} Total
-  <button class="action" (click)="showForceForm()">Add Force</button>
-  <div *ngIf="add_force">
-    <input placeholder="Force Name" [(ngModel)]="force.force_name"><br>
-    <input placeholder="Force Type" [(ngModel)]="force.type"><br>
-    <input placeholder="Location" [(ngModel)]="force.location"><br>
-    <input placeholder="Notes" [(ngModel)]="force.notes"><br><br>
-    <button (click)="addForce()">Add</button>
-  </div>
-  <div class="record" *ngFor="let force of country.forces">
-    {{ force.force_name }} <a href="javascript:void(0)" style="float:right;" (click)="removeForce(force.force_name)">remove</a>
-  </div>
-</div>
-!-->
 
 
 

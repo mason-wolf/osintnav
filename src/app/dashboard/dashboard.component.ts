@@ -32,10 +32,9 @@ export class DashboardComponent implements OnInit {
 
 
   async importData(event) {
-
     const file:File = event.target.files[0];
     const text = await file.text()
-    console.log(text);
+    this.fileService.updateDb(text);
   }
 
 

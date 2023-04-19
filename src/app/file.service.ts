@@ -13,8 +13,11 @@ export class FileService {
    }
 
   getDb() {
-   // localStorage.clear();
     return JSON.parse(localStorage.getItem("db"));
+  }
+
+  updateDb(data) {
+    localStorage.setItem("db", data);
   }
 
   addCountry(country_name: string) {

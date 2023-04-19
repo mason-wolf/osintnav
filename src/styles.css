@@ -28,7 +28,7 @@ button {
 }
 
 .container {
-  border: 1px solid #009e00;
+  border: 1px solid #494949;
   margin-top:10px;
 }
 
@@ -50,6 +50,7 @@ a {
 
 .mat-ink-bar {
   background-color: #009e00 !important;
+  border-bottom:1px solid #009e00;
 }
 
 table {
@@ -57,6 +58,6 @@ table {
   font-family: 'Saira Semi Condensed', sans-serif;
 }
 
-.mat-table {
+.mat-table, .mat-paginator {
   background-color: rgb(46, 46, 46);
 }
