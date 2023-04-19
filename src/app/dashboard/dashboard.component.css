@@ -1,0 +1,15 @@
+.dashboard {
+  text-align: center;
+  padding: 1em;
+  margin-top:25px;
+  border: none;
+}
+
+.dashboard a {
+  color: #bebebe;
+  font-size: 50px;
+}
+
+.dashboard a:hover {
+  color: rgb(0, 243, 0);
+}

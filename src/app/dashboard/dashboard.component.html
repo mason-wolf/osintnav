@@ -1,11 +1,10 @@
-<input [(ngModel)]="country_name" style="width:100px;"><button (click)="addCountry()">Add Country</button>
+
 <button style="float:right;" (click)="exportData()">Export Data</button><br>
-<input type="file" class="file-upload" (change)="importData($event)" (click)="$event.target.value=null"><br><br>
-<h4>Countries</h4>
+<!-- <input type="file" class="file-upload" (change)="importData($event)" (click)="$event.target.value=null"><br><br> -->
 
 <ng-container *ngFor="let country of countries">
-  <div class="container">
-    <a a [routerLink]="['/view-country', country.country_name]">{{ country.country_name }}</a><a href="javascript:void(0)" style="float:right;" (click)="removeCountry(country)">remove</a><br>
+  <div class="container dashboard">
+    <a [routerLink]="['/view-country', country.country_name]">{{ country.country_name.toUpperCase() }}</a><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1920px-Flag_of_Russia.svg.png" style="width:50px;height:30px;margin-left:25px;"><br>
   </div>
 </ng-container>
 
