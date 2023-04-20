@@ -12,13 +12,23 @@ import { MatTableModule } from '@angular/material/table';
 import { ForcesComponent } from './forces/forces.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { WeaponsComponent } from './weapons/weapons.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { AircraftComponent } from './aircraft/aircraft.component';
+import { ShipsComponent } from './ships/ships.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ViewCountryComponent,
-    ForcesComponent
+    ForcesComponent,
+    WeaponsComponent,
+    VehiclesComponent,
+    AircraftComponent,
+    ShipsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTabsModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

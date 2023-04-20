@@ -1,0 +1,26 @@
+<!-- <div class="weapons" style="padding:1em;border:none;">
+  <button (click)="showWeaponForm()" class="form-control">Add Weapon</button>
+  <ng-container *ngIf="add_weapon">
+    <mat-form-field appearance="fill">
+      <mat-label>Weapon Name</mat-label>
+      <input matInput required>
+    </mat-form-field>
+  </ng-container>
+</div> -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortDirection="asc" matSortDisableClear>
+
+  <ng-container matColumnDef="weapon_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Weapon Name</th>
+    <td mat-cell *matCellDef="let weapon"> {{weapon.weapon_name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="weapon_type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Weapon Type</th>
+    <td mat-cell *matCellDef="let weapon" [innerHtml]="weapon.weapon_type"></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[20, 40, 60]" ></mat-paginator>

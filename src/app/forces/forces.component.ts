@@ -23,9 +23,7 @@ export class ForcesComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.country.forces)
     this.sort.sort(({ id: 'force_name', start: 'asc'}) as MatSortable);
     this.dataSource.sort = this.sort;
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-
   }
 
   ngAfterViewInit() {
