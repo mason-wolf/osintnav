@@ -19,6 +19,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AircraftComponent } from './aircraft/aircraft.component';
 import { ShipsComponent } from './ships/ships.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     WeaponsComponent,
     VehiclesComponent,
     AircraftComponent,
-    ShipsComponent
+    ShipsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

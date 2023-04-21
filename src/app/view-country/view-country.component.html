@@ -4,7 +4,12 @@
 </div>
 <a [routerLink]="['']">Dashboard</a>
 <div class="container">
-  <mat-tab-group animationDuration="0ms">
+  <mat-tab-group animationDuration="0ms" dynamicHeight dynamicHeight="true">
+    <mat-tab label="Map">
+      <div style="height:700px;">
+        <app-map [country]="country" (viewForce)="view($event)"></app-map>
+      </div>
+    </mat-tab>
     <mat-tab label="Forces">
         <app-forces [country]="country" (viewForce)="view($event)"></app-forces>
     </mat-tab>
@@ -22,7 +27,6 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-
 
 <ng-template #viewItemDialog>
   <mat-dialog-actions align="end">

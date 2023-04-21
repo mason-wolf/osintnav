@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-view-country',
   templateUrl: './view-country.component.html',
-  styleUrls: ['./view-country.component.css']
+  styleUrls: ['./view-country.component.css'],
 })
 export class ViewCountryComponent implements OnInit {
 
