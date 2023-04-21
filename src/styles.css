@@ -18,7 +18,11 @@ input {
   width: 100%;
 }
 
-button, .button {
+input[type=file]::file-selector-button {
+  margin-right: 50px;
+}
+
+button, .button, input[type=file]::file-selector-button {
   cursor: pointer;
   padding:.5em;
   font-size: 18px;
@@ -60,8 +64,39 @@ table {
   font-family: 'Saira Semi Condensed', sans-serif;
 }
 
+table td {
+  width: 50%;
+}
+
 .mat-table, .mat-paginator {
   background-color: rgb(46, 46, 46);
 }
 
+.table-link
+{
+  color:#2bfa2b;
+}
 
+.table-link:hover {
+  color: yellow;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

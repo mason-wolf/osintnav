@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AircraftComponent } from './aircraft/aircraft.component';
 import { ShipsComponent } from './ships/ships.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ShipsComponent } from './ships/ships.component';
     MatSortModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

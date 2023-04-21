@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortable } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -16,6 +16,7 @@ export class WeaponsComponent implements OnInit {
   dataSource: any;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @Output() viewWeapon: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -33,7 +34,8 @@ export class WeaponsComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator
-}
+  }
+  
   showWeaponForm() {
     if (!this.add_weapon) {
       this.add_weapon = true;
@@ -42,4 +44,9 @@ export class WeaponsComponent implements OnInit {
       this.add_weapon = false;
     }
   }
+
+  view(item) {
+    this.viewWeapon.emit(item);
+  }
+
 }

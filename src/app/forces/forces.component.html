@@ -2,7 +2,7 @@
 
   <ng-container matColumnDef="force_name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Group Name</th>
-    <td mat-cell *matCellDef="let force"> {{force.force_name}} </td>
+    <td mat-cell *matCellDef="let force"> <a href="javascript:void(0)" (click)="view(force)" class="table-link">{{force.force_name}}</a></td>
   </ng-container>
 
   <ng-container matColumnDef="description">

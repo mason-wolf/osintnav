@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FileService } from '../file.service';
 import { Force } from '../models/force/force.model';
+import { ViewItem } from '../models/force/view-item.model';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -16,8 +18,10 @@ export class ViewCountryComponent implements OnInit {
   add_force = false;
   db: any;
   country: any;
+  viewItem: ViewItem = new ViewItem();
+  @ViewChild('viewItemDialog') viewItemDialog: TemplateRef<any>;
 
-  constructor(private route: ActivatedRoute, private fileService: FileService) { }
+  constructor(private route: ActivatedRoute, private fileService: FileService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(res => {
@@ -45,4 +49,21 @@ export class ViewCountryComponent implements OnInit {
     }
   }
 
+  view(item) {
+    console.log(item);
+    for (var itemType in item) {
+      if (itemType.includes('force_name')) {
+        this.viewItem.id = item.id;
+        this.viewItem.name = item.force_name;
+        this.viewItem.description = item.description;
+      }
+      if (itemType.includes('weapon_name')) {
+        this.viewItem.id = item.id;
+        this.viewItem.name = item.weapon_name;
+        this.viewItem.description = item.description;
+        console.log(item)
+      }
+    }
+    this.dialog.open(this.viewItemDialog);
+  }
 }

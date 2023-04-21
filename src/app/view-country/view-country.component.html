@@ -6,16 +6,33 @@
 <div class="container">
   <mat-tab-group animationDuration="0ms">
     <mat-tab label="Forces">
-        <app-forces [country]="country"></app-forces>
+        <app-forces [country]="country" (viewForce)="view($event)"></app-forces>
     </mat-tab>
     <mat-tab label="Weapons">
-      <app-weapons [country]="country"></app-weapons>
+      <app-weapons [country]="country" (viewWeapon)="view($event)"></app-weapons>
     </mat-tab>
     <mat-tab label="Vehicles">
       <app-vehicles [country]="country"></app-vehicles>
     </mat-tab>
+    <mat-tab label="Aircraft">
+      <app-aircraft [country]="country"></app-aircraft>
+    </mat-tab>
+    <mat-tab label="Ships">
+      <app-ships [country]="country"></app-ships>
+    </mat-tab>
   </mat-tab-group>
 </div>
+
+
+<ng-template #viewItemDialog>
+  <mat-dialog-actions align="end">
+      <i class="fa fa-window-close" mat-button matDialogClose="yes" style="font-size:32px;"></i>
+  </mat-dialog-actions>
+  <h1 style="padding:.5em;margin-top:-70px;margin-left:-15px;">{{ viewItem.name }}</h1>
+  <div class="container-fluid" style="overflow-y: scroll;height:300px;padding:0.5em;" [innerHTML]="viewItem.description">
+  </div>
+  <button type="button" class="btn btn-success" mat-dialog-close style="float:right;margin-top:15px;">Close</button>
+</ng-template>
 
 
 

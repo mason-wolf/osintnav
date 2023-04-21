@@ -12,7 +12,7 @@
 
   <ng-container matColumnDef="weapon_name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Weapon Name</th>
-    <td mat-cell *matCellDef="let weapon"> {{weapon.weapon_name}} </td>
+    <td mat-cell *matCellDef="let weapon"> <a href="javascript:void(0)" (click)="view(weapon)" class="table-link">{{weapon.weapon_name}} </a></td>
   </ng-container>
 
   <ng-container matColumnDef="weapon_type">
