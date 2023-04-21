@@ -1,0 +1,12 @@
+.news-container {
+  padding: 2em;
+  font-size: 15px;
+}
+
+.news-container a {
+  color: rgb(180, 180, 0);
+}
+
+.news-container a:hover {
+  color: #00ff00;
+}

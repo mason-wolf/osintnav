@@ -29,7 +29,6 @@ export class ViewCountryComponent implements OnInit {
     });
 
     this.country = this.fileService.getCountry(this.country_name);
-    console.log(this.country)
   }
 
   addForce() {

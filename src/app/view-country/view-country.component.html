@@ -25,6 +25,9 @@
     <mat-tab label="Ships">
       <app-ships [country]="country" (viewShip)="view($event)"></app-ships>
     </mat-tab>
+    <mat-tab label="Overview">
+      <app-overview [country]="country"></app-overview>
+    </mat-tab>
   </mat-tab-group>
 </div>
 
