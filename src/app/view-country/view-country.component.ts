@@ -29,6 +29,7 @@ export class ViewCountryComponent implements OnInit {
     });
 
     this.country = this.fileService.getCountry(this.country_name);
+    console.log(this.country)
   }
 
   addForce() {
@@ -50,7 +51,6 @@ export class ViewCountryComponent implements OnInit {
   }
 
   view(item) {
-    console.log(item);
     for (var itemType in item) {
       if (itemType.includes('force_name')) {
         this.viewItem.id = item.id;
@@ -61,9 +61,30 @@ export class ViewCountryComponent implements OnInit {
         this.viewItem.id = item.id;
         this.viewItem.name = item.weapon_name;
         this.viewItem.description = item.description;
-        console.log(item)
+      }
+      if (itemType.includes('vehicle_name')) {
+        this.viewItem.id = item.id;
+        this.viewItem.name = item.vehicle_name;
+        this.viewItem.description = item.description;
+      }
+      if (itemType.includes('aircraft_name')) {
+        this.viewItem.id = item.id;
+        this.viewItem.name = item.aircraft_name;
+        this.viewItem.description = item.description;
+      }
+      if (itemType.includes('ship_name')) {
+        this.viewItem.id = item.id;
+        this.viewItem.name = item.ship_name;
+        this.viewItem.description = item.description;
       }
     }
-    this.dialog.open(this.viewItemDialog);
+
+    if (!this.viewItem.description) {
+      this.viewItem.description = "No data acquired.";
+    }
+    this.dialog.open(this.viewItemDialog,
+      {
+        panelClass: 'view-modal'
+      });
   }
 }

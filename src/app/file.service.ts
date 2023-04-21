@@ -17,6 +17,7 @@ export class FileService {
   }
 
   updateDb(data) {
+    localStorage.clear();
     localStorage.setItem("db", data);
   }
 

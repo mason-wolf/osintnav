@@ -69,7 +69,7 @@ table td {
 }
 
 .mat-table, .mat-paginator {
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(41, 41, 41);
 }
 
 .table-link
@@ -93,10 +93,42 @@ table td {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #003b00;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #004600;
+}
+
+.view-modal, .mat-dialog-container {
+  background-color: #242424;
+  border: 1px solid #005a00;
+  padding:0 !important;
+  margin: 0;
+}
+
+.mat-dialog-container h1 {
+  border-bottom: 1px solid #005a00;
+  padding:1em;margin-top:-70px;margin-left:-10px;
+}
+
+.action {
+  float: right;
+}
+
+
+.description
+{
+  overflow-y: scroll;
+  height:300px;
+  padding:2em;
+  margin-left:-10px;
+  margin-top: -22px;
+}
+
+.close {
+  float:right;
+  margin-top:15px;
+  margin: 25px;
+  border: 1px solid #005a00;
 }

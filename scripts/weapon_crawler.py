@@ -5,7 +5,7 @@ import json
 import os
 
 url = "https://www.militaryfactory.com/"
-request = requests.get("https://www.militaryfactory.com/modern-armor/russian-army.php")
+request = requests.get("https://www.militaryfactory.com/ships/by-country.php?Nation=Russia")
 soup = BeautifulSoup(request.text, "lxml")
 
 weapons = []
@@ -42,7 +42,7 @@ def get_weapons():
 def get_weapon_descriptions():
   table = soup.findAll("div", {'class': 'box'})
   for row in table:
-    weapon_name = row.find('span', {'class': 'textNormal textGray'})
+    weapon_name = row.find('span', {'class': 'textLarge textBold textDkGray'})
     link = row.find("a")
     request = requests.get(url + link["href"])
     soup2 = BeautifulSoup(request.text, "lxml")
@@ -96,7 +96,7 @@ def map_weapon_data():
     data = open("scripts/weapons/" + file_name, "r")
     descs = json.load(data)
     for weapon in weapons:
-       if (weapon["weapon_type"] == descs["weapon_name"]):
+       if (weapon["weapon_name"] == descs["weapon_name"]):
           weapon["description"] = descs["weapon_desc"]
 
   f = open("scripts/weapons.json", "w")
@@ -105,6 +105,7 @@ def map_weapon_data():
 
 
 def update_db(key):
+  print("Updating database..")
   weapons_file = open("scripts/weapons.json")
   weapons = json.load(weapons_file)
   db = open("scripts/db_new_forces.json")
@@ -112,27 +113,30 @@ def update_db(key):
   db_json["countries"][0][key] = weapons
   f = open("scripts/db_new_forces.json", "w")
   f.write(json.dumps(db_json))
+  print("Done.")
   f.close()
 
 def rename_keys(newName):
   weapons_file = open("scripts/weapons.json")
   weapons = json.load(weapons_file)
+  weapon_count = 0
   for weapon in weapons:
+     weapon_count = weapon_count + 1
      print("Converting " + weapon["weapon_name"] + " data type to " + newName)
      weapon[newName + "_name"] = weapon["weapon_name"]
      del weapon["weapon_name"]
      weapon[newName + "_type"] = weapon["weapon_type"]
      del weapon["weapon_type"]
+  print("Processed " + str(weapon_count) + " items.")
   f = open("scripts/weapons.json", "w")
   f.write(json.dumps(weapons))
   f.close()
 
 
 
-
-# get_weapons()
-# get_weapon_descriptions()
-# clean_weapon_data()
-# map_weapon_data()
-#rename_keys("vehicle")
-update_db("vehicles")
+get_weapons()
+get_weapon_descriptions()
+clean_weapon_data()
+map_weapon_data()
+rename_keys("ship")
+update_db("ships")

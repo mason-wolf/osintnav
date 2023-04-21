@@ -12,13 +12,13 @@
       <app-weapons [country]="country" (viewWeapon)="view($event)"></app-weapons>
     </mat-tab>
     <mat-tab label="Vehicles">
-      <app-vehicles [country]="country"></app-vehicles>
+      <app-vehicles [country]="country" (viewVehicle)="view($event)"></app-vehicles>
     </mat-tab>
     <mat-tab label="Aircraft">
-      <app-aircraft [country]="country"></app-aircraft>
+      <app-aircraft [country]="country" (viewAircraft)="view($event)"></app-aircraft>
     </mat-tab>
     <mat-tab label="Ships">
-      <app-ships [country]="country"></app-ships>
+      <app-ships [country]="country" (viewShip)="view($event)"></app-ships>
     </mat-tab>
   </mat-tab-group>
 </div>
@@ -28,10 +28,10 @@
   <mat-dialog-actions align="end">
       <i class="fa fa-window-close" mat-button matDialogClose="yes" style="font-size:32px;"></i>
   </mat-dialog-actions>
-  <h1 style="padding:.5em;margin-top:-70px;margin-left:-15px;">{{ viewItem.name }}</h1>
-  <div class="container-fluid" style="overflow-y: scroll;height:300px;padding:0.5em;" [innerHTML]="viewItem.description">
+  <h1>{{ viewItem.name }}</h1>
+  <div class="description" [innerHTML]="viewItem.description">
   </div>
-  <button type="button" class="btn btn-success" mat-dialog-close style="float:right;margin-top:15px;">Close</button>
+  <button type="button" class="btn btn-success close" mat-dialog-close>Close</button>
 </ng-template>
 
 

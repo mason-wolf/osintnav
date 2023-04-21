@@ -2,7 +2,7 @@
 
   <ng-container matColumnDef="ship_name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Ship Name</th>
-    <td mat-cell *matCellDef="let ship"> {{ ship.ship_name}} </td>
+    <td mat-cell *matCellDef="let ship"><a href="javascript:void(0)" (click)="view(ship)" class="table-link">{{ ship.ship_name }} </a></td>
   </ng-container>
 
   <ng-container matColumnDef="ship_type">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortable } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -15,6 +15,7 @@ export class VehiclesComponent implements OnInit {
   dataSource: any;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @Output() viewVehicle: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -27,5 +28,9 @@ export class VehiclesComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator
-}
+  }
+
+  view(item) {
+    this.viewVehicle.emit(item);
+  }
 }
