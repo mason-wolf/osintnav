@@ -32,4 +32,14 @@ export class ShipsComponent implements OnInit {
   view(item) {
     this.viewShip.emit(item);
   }
+
+  search(event) {
+    let results = this.country.ships.filter(function (s) {
+      return s.ship_name.toLowerCase().includes(event.toLowerCase())
+    });
+
+    this.dataSource = new MatTableDataSource(results);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }

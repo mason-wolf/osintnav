@@ -1,4 +1,5 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortDirection="asc" matSortDisableClear>
+<app-search (search)="search($event)"></app-search>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortDirection="asc" matSortDisableClear style="margin-top:-20px;">
 
   <ng-container matColumnDef="vehicle_name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Vehicle Name</th>

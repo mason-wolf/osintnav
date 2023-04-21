@@ -33,4 +33,13 @@ export class VehiclesComponent implements OnInit {
   view(item) {
     this.viewVehicle.emit(item);
   }
+
+  search(event) {
+    let results = this.country.vehicles.filter(function (v) {
+      return v.vehicle_name.toLowerCase().includes(event.toLowerCase())
+    });
+    this.dataSource = new MatTableDataSource(results);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }

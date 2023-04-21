@@ -38,4 +38,13 @@ export class ForcesComponent implements OnInit {
   view(item) {
     this.viewForce.emit(item);
   }
+
+  search(event) {
+    let results = this.country.forces.filter(function (f) {
+      return f.force_name.toLowerCase().includes(event.toLowerCase())
+    });
+    this.dataSource = new MatTableDataSource(results);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }

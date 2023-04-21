@@ -34,4 +34,13 @@ export class AircraftComponent implements OnInit {
     this.dataSource.paginator = this.paginator
   }
 
+  search(event) {
+    let results = this.country.aircraft.filter(function (a) {
+      return a.aircraft_name.toLowerCase().includes(event.toLowerCase())
+    });
+    
+    this.dataSource = new MatTableDataSource(results);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }

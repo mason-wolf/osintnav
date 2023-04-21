@@ -23,19 +23,14 @@ export class WeaponsComponent implements OnInit {
   ngOnInit(): void {
 
     this.dataSource = new MatTableDataSource(this.country.weapons)
-   // this.sort.sort(({ id: 'force_name', start: 'asc'}) as MatSortable);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-
-    // this.country.weapons.forEach(weapon => {
-    //   console.log(weapon);
-    // })
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator
   }
-  
+
   showWeaponForm() {
     if (!this.add_weapon) {
       this.add_weapon = true;
@@ -49,4 +44,12 @@ export class WeaponsComponent implements OnInit {
     this.viewWeapon.emit(item);
   }
 
+  search(event) {
+    let results = this.country.weapons.filter(function (w) {
+      return w.weapon_name.toLowerCase().includes(event.toLowerCase())
+    });
+    this.dataSource = new MatTableDataSource(results);
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }

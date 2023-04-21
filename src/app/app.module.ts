@@ -20,6 +20,7 @@ import { AircraftComponent } from './aircraft/aircraft.component';
 import { ShipsComponent } from './ships/ships.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MapComponent } from './map/map.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MapComponent } from './map/map.component';
     VehiclesComponent,
     AircraftComponent,
     ShipsComponent,
-    MapComponent
+    MapComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
