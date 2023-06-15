@@ -1,3 +1,6 @@
+"""
+Crawls data sources to extract information related to a system.
+"""
 import uuid
 from bs4 import BeautifulSoup
 import requests

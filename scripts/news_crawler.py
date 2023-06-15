@@ -1,3 +1,6 @@
+"""
+Experimental news crawler for gathering OSINT.
+"""
 import uuid
 from bs4 import BeautifulSoup
 import requests

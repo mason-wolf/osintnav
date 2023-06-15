@@ -1,3 +1,6 @@
+"""
+Formats force data and outputs improved data structure.
+"""
 import json
 
 countries_db = open("scripts\db.json")

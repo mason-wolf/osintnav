@@ -1,4 +1,7 @@
 
+"""
+Parses force data from raw feeds.
+"""
 import json
 
 f = open("scripts/forces-raw.json")
@@ -34,7 +37,6 @@ def update_forces():
   f = open("scripts/db_forces.json", "w")
   f.write(json.dumps(forceList))
   f.close()
-
 
 def update_db():
     new_forces_file = open("scripts/db_forces.json")
